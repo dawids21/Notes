@@ -1,0 +1,54 @@
+= A deep dive into problem space
+:toc:
+
+== Running a big picture workshop
+Służy do zbudowania modelu aktualnego zrozumienia systemu, znaleźć ryzyka i problemy. Biorą w nim udział wszystkie najważniejsze osoby zaangażowane w biznes. Podczas sesji:
+
+- Budujemy model zawierający wszystkie linie biznesu, pokazujemy komunikację między elementami, ich granice i różne perspektywy.
+- Odkrywamy i walidujemy najważniejszy problem do rozwiązania.
+- Odkrywamy ryzyka.
+
+=== Najważniejsze składniki
+- Dobrani ludzie, cechujący się ciekawością i ekspertyzą.
+- Duży pokój (długa ściana, miejsce do poruszania, brak miejsc siedzących, paper roll na ścianie, flip-chart z legendą, dużo karteczek i markerów, jedzenie i picie, timer).
+- Co najmniej jeden facilitator.
+
+image::./00015.jpeg[Pokój]
+
+=== Struktura sesji
+Fazy o rosnącym stopniu skomplikowania:
+
+- kick-off
+- chaotic exploration
+- enforcing the timeline
+- explicit walk-through
+
+==== Kick-off
+Każdy się przedstawia i określany jest cel sesji. Musimy zachęcić ludzi do uczestniczenia i ostrzec, że może być chaotycznie. Ta faza jest krótka.
+
+==== Chaotic exploration
+Wykorzystujemy tu domain events (pomarańczowe karteczki), które staramy się układać z grubsza według czasu. Notację możemy zawrzeć na widocznej legendzie. Trudny jest początek, ale powinniśmy się postarać, aby to uczestnicy zaczęli. Unikamy karteczek z nazwą procesu, musimy sięgnąć głębiej do niego. Powinniśmy rozłączać mniejsze grupki. Prawdopodobnie otrzymamy kilka zbiorów ułożonych eventów, ale całość procesu będzie nieułożona. W pewnym momencie dokładanie ustanie i ludzie zaczną kontemplować i patrzeć na całość.
+
+==== Enforcing the timeline
+Musimy się upewnić, że cały proces jest ułożony w dobrej kolejności. To w tym momencie zacznie się dużo dyskusji. Problemem może być mało miejsca, można dołożyć drugą taśmę lub skorzystać z *Chapters Sorting*. Warto wybrać dobrą strategię i połączyć kilka.
+
+===== Sorting strategies
+- Pivotal Events — Szukamy kilku (4-5) najważniejszych eventów i dajemy przez nie pionowe kreski, które określają ważne momenty. Potem możemy szukać po danym obszarze.
+- Swimlanes — Poziome obszary przydzielone do danego aktora. Poprawiają czytelność, ale zajmują pionowe miejsce, które jest ograniczone. Przydają się, gdy mamy pojedynczy proces lub parę współbieżnych. Możemy też zrobić mini swimlines, gdy mamy ustaloną wstępną strukturę za pomocą *Pivotal Events* lub *Temporal Milestones*. Możemy też podpisać dany proces.
+- Temporal Milestones — Czasami *Pivotal Events* nie są dobre (dużo współbieżnych lub brak dokładnego ułożenia). Temporal Milestones polegają na wybraniu jakiegoś ważnego zdarzenie i wyznaczenia obszarów czasowych (rok przed, 6 miesięcy przed itd.) w które dajemy eventy.
+- Chapters Sorting — Przydatne, gdy jest mało miejsca. Wybieramy około 15-25 ważnych eventów, układamy je gdzieś obok i układamy na głównej tablicy, porządkując resztę.
+
+===== HotSpots
+Podczas układania powinniśmy szukać miejsc (HotSpot), które są szczególnie sporne i zaznaczać je fioletowymi karteczkami. Łapiemy w nich komentarze i zgrzyty.
+
+===== People and systems
+Używamy małych, żółtych karteczek, by oznaczyć aktorów danego procesu. Nie chodzi o to, aby dodać aktora do każdego możliwego procesu, ale żeby wywołać dyskusję, np. nad nazewnictwem danego aktora. Oznaczamy też external systems, czyli każda część flow, na którą nie mamy wpływu. Wiele rzeczy możemy tak nazwać (bad luck, Brexit). Takie systemy często dadzą nam dużo nowych eventów. Warto nie pomijać szczegółów, nawet jak mamy mało miejsca.
+
+==== Explicit walk-through
+W tej fazie prosimy kogoś, aby przeszedł się przez daną część procesu, starając się opowiedzieć logiczną historię, gdzie jedno zdarzenie wynika z poprzedniego. Mówimy na głos. Dodajemy eventy, które nam brakują. Powinniśmy zmieniać narratora co jakiś czas. Powinniśmy uważać na dyskusje i jeżeli są zbyt długie to oznaczać je jako *HotSpot*. Patrząc na mowę ciała, możemy ocenić, czy dana dyskusja jest interesująca.
+
+===== Telling the story backward
+Wybieramy event z końca procesu i patrzymy, czy poprzedzające je eventy wystarczą, aby ten się zadział. Dany event powinien być bezpośrednim skutkiem. Można też analizować od *Pivotal Events*.
+
+==== Bonus phase: Add the money
+Możemy spróbować skupić się na przepływie pieniędzy.
