@@ -1,4 +1,5 @@
 = Domain-Driven Design - Tackling Complexity in the Heart of Software
+:toc:
 
 == Putting the Domain Model to Work
 
