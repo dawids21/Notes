@@ -1,0 +1,123 @@
+= Domain-Driven Design - Tackling Complexity in the Heart of Software
+
+== Putting the Domain Model to Work
+
+*Model* reprezentuje jakąś część rzeczywistości, która jest najważniejsza w danym kontekście.
+Model to uproszczenie pozwalające skupić się na istocie problemu.
+Obszar, do którego użytkownik używa oprogramowania, jest nazywany *domeną* tego programu.
+Należy opanować *wiedzę* potrzebną w danej dziedzinie.
+Można to zrobić poprzez *model*.
+Trzy rzeczy wpływają na wybór modelu:
+
+* Model i design wpływają wzajemnie na siebie.
+* Model kreuje język, którym posługują się deweloperzy i eksperci domenowi.
+* Model obrazuje wiedzę zdobytą w zespole.
+
+=== Crunching Knowledge
+
+Zdobywanie wiedzy o problemie przekłada się bezpośrednio na tworzony model.
+Każda nowa informacja, która jest istotna z punktu widzenia oprogramowania, powinna zostać przełożona na jakiś element modelu.
+W ten sposób, w miarę zdobywania wiedzy domenowej nasz model coraz lepiej rozwiązuje problemy w danej dziedzinie.
+Model taki powstaje poprzez analizę sytuacji, z jakimi musi się zmierzyć.
+W momencie, w którym obecny model nie wystarcza na rozwiązanie danego problemu, należy go zmienić.
+
+==== Ingredients of Effective Modeling
+
+. Wczesne połączenie modelu i jego implementacji.
+. Rozwój języka, na którym opiera się model.
+. Rozwój modelu bogatego w wiedzę, który nie jest tylko zbiorem danych, ale faktycznym odzwierciedleniem procesów.
+. Zostawianie tylko najważniejszych części modelu.
+W momencie, gdy jakaś część jest niepotrzebna, należy przebudować model, tak aby ją usunąć.
+W ten sposób model jest uproszczony.
+. Burza mózgów i eksperymentowanie w celu odnalezienia najbardziej adekwatnego modelu.
+
+==== Continuous Learning
+
+Wiedza w projekcie może być rozproszona zarówno poprzez wymianę ludzi, jak i outsourcing.
+Ważne jest, aby przeznaczyć jakąś część czasu na naukę domeny, tak aby móc lepiej wyrażać tę wiedzę w modelu.
+Ta nauka może się odbywać poprzez czytanie modelu, który powinien wyraźnie zawierać potrzebną wiedzę.
+
+=== Communication and the Use of Language
+
+Model to zbiór pojęć, które są połączone z domeną. Ważne jest, aby istniała możliwość przekazywania tych pojęć za pomocą każdego medium, zarówno pisanego, jak i mówionego.
+
+==== Ubiquitous Language
+Problem wynika z potrzeby tłumaczenia między ekspertami domenowymi a deweloperami, które może doprowadzić do utraty znaczenia. Osoby (nawet te same) posługują się różnymi językami, co prowadzi do niezrozumienia. Język taki nie prowadzi do poszerzania wiedzy, ponieważ żaden z nich nie spełnia wszystkich potrzeb. Język taki powinien zawierać nazwy klas i ważnych operacji, zasady działania modelu, słowa opisujące organizację projektu i często używane wzorce. Konsekwentne używanie takiego języka pozwoli go ulepszyć. Zmiany w języku doprowadzają do zmian w modelu i kodzie. Dany język dotyczy tylko jednego modelu.
+
+==== Modeling Out Loud
+Dobry sposobem jest wyrażanie rzeczy na głos i sprawdzanie, czy wszystko nam gra. Jeżeli nie to trzeba dodać nowe pojęcia lub zmienić obecne. Korzystając z tego języka, pozwalamy mu się rozwijać. Odkrywając nowe pojęcia, musimy zamieścić je w kodzie. Możemy przetestować obecny model, wyjaśniając wszystkie procesy krok po kroku.
+
+image::02fig03.jpg[Ubiquitous language]
+
+==== Documents and Diagrams
+Diagramy wspomagają dyskusję. Nie mogę być jednak jedyne, gdyż nie są w stanie przekazać całości znaczenia. Nie powinniśmy też przedstawiać każdego obiektu, bo będzie za dużo. Aby dodać znaczenie, i co dany obiekt ma robić, musimy dodać dokumentację. Diagramy muszą ułatwiać komunikację, a jest to możliwe tylko, gdy nie są zbytnio szczegółowe.
+
+==== Written design documents
+Dokumenty powinny być dodatkiem do kodu. Dokument taki powinien opisywać wysokopoziomowe zachowania i być wolnym od szczegółów implementacyjnych. Dokumenty powinny być aktualizowane, tak aby zawierały pojęcia z obecnego ubiquitous language.
+
+=== Binding Model and Implementation
+Wytworzony model powinien być łatwo implementowalny w kodzie. Czytając kod, powinniśmy widzieć pojęcia zawarte w modelu. Rozjazd między modelem a implementacją powoduje stopniowe pogarszanie kodu i sprawia, że model staje się bezużyteczny.
+
+==== Model-Driven Design
+Kod i model powinny być zmieniane jednocześnie. Model-Driven Design powoduje jednoznaczne powiązanie modelu i kodu. Każda rola prezentowana w modelu powinna mieć swoje odzwierciedlenie w kodzie. Takie model powinien spełniać zadania analizy, jak i projektu rozwiązania. Takie rozwiązanie, bazujące na dobrze dobranym modelu, skaluje się dużo lepiej.
+
+==== Hands-On Modelers
+Każdy w projekcie powinien brać udział w modelowaniu niezależnie od stopnia zaawansowania. Nie powinniśmy rozdzielać roli modelarza od programisty.
+
+== The Building Blocks of a Model-Driven Design
+image::partii.jpg[Building blocks]
+
+=== Isolating the Domain
+Aby móc korzystać z domeny, musimy odizolować ją od reszty systemu, która integruje się z domeną. W ten sposób domena będzie łatwo dostępna.
+
+==== Layered Architecture
+Aby uzyskać "separation of concerns", powinniśmy wydzielić warstwy, które oddzielają od siebie UI, aplikację, domenę i infrastrukturę. Każda warstwa może komunikować się tylko ze sobą i z warstwami niżej. Warstwa domeny jest odpowiedzialna za fundamentalne reguły biznesowe. Wykorzystywanie warstw wyższych powinno być wykonywane przez wzorce architektoniczne takie jak callbacki lub "observers".
+
+image::t0070_01.jpg[Layers of architecture]
+
+==== The "Smart UI" anti-pattern
+Ten wzorzec może być wykorzystywany do małych projektów, z niedoświadczonym zespołem, który chce szybko wyprodukować aplikację. Zakłada on, że większość logiki jest umieszczona w interfejsie użytkownika, a reszta aplikacji jest odpowiedzialna tylko za trzymanie danych i ich persystencję w bazach danych. Jeżeli jednak architektura aplikacji izoluje domenę, to powinniśmy użyć DDD.
+
+=== A Model Expressed in Software
+Aby móc połączyć design i implementację potrzebujemy podstawowych bloków, z których możemy budować nasze rozwiązanie. Precyzyjne ich wykorzystanie pozwoli uchwycić nam szczegóły implementacji.
+
+==== Associations
+Dla każdego powiązania w modelu powinien istnieć mechanizm w oprogramowaniu, z tymi samymi właściwościami. Powinniśmy się starać zawierać jak najmniejszą ilość dwukierunkowych powiązań. Możemy to robić poprzez:
+
+. Nadawanie kierunku
+. Usuwanie powiązań
+. Dodanie kwalifikatora, redukując ilość
+
+Czasami musimy się zastanowić, który kierunek powiązania jest ważniejszy. Możemy to zrobić poprzez próbę zadania pytania.
+
+==== Entities (a.k.a. Reference Objects)
+Obiekty, które są definiowane poprzez tożsamość, a nie atrybuty. Ta tożsamość jest zachowywana nawet między różnymi implementacjami i reprezentacjami. Musimy znaleźć pewien sposób na wyrażenie i sprawdzenie tej tożsamości. W zależności od kontekstu ta sama rzecz może mieć tożsamość lub nie. Modelując je, powinniśmy skupić się na tym, co wyróżnia jeden obiekt od drugiego i zatrzymać tylko to zachowanie, które je identyfikuje. Dodatkowo zatrzymujemy te atrybuty, po których wyszukujemy.
+
+==== Value Objects
+Mogą zawierać referencje do encji. Niemutowalność znacznie ułatwia design tych obiektów. Czasem można udostępnić mutowanie, jeżeli ma to duży wpływ na wydajność. Nie jest wtedy możliwe współdzielenie tych obiektów. W ich przypadku nie ma sensu powiązanie w dwie strony.
+
+==== Services
+Używamy, gdy nie jesteśmy w stanie znaleźć miejsca dla danej procedury. Nie powinniśmy się poddawać zbyt szybko. Nie posiadają stanu, mają w sobie jedynie daną operację. Pozwalają nie tworzyć niepotrzebnych powiązań między obiektami. Nazywana przez czynność, którą wykonuje. Dana czynność nie powinna być częścią żadnej encji ani VO. Ważniejsza jest prostota interfejsu od możliwości serwisu.
+
+===== Domain service
+Domain Service zawiera w sobie logikę potrzebną do wykonania danych operacji.
+
+===== Application service
+Application Service jest odpowiedzialny, za rozpoczęcie wykonywania danych operacji i wskazywania co trzeba zrobić. Odpowiadają także, za operacje, które są poza modelem.
+
+==== Modules
+Moduły pozwalają nam tak podzielić domenę, abyśmy byli w stanie objąć ją umysłem. Powinny mieć dobry podział, wysoką kohezję i niski coupling. Obiekty w jednym module mówią, że należy patrzeć na nie jednocześnie.
+
+=== The life cycle of a domain object
+Chodzi nam o to, aby zarządzane cyklem życia danego obiektu, zachowywało jego integralność i aby model nie został przyćmiony przez zarządzanie cyklem.
+
+==== Aggregates
+Dzięki nim nie mamy ogromnej sieci obiektów, pozwalają nam wyznaczyć granice. Granice te powinny wyznaczać jakieś niezmienniki, które muszą być utrzymywane w danej grupie obiektów. Każdy agregat traktujemy jako jednostkę zmiany danych, które zmieniają się jednocześnie. Każdy agregat ma root i boundary. Root to encja w agregacie, do której inne obiekty mogą mieć referencje, nie do żadnej innej w agregacie. Boundary określa, które obiekty składają się na danych agregat. Tylko root musi mieć globalną tożsamość. Zasada, która obejmuje wiele agregatów, nie będzie zawsze utrzymywana (eventual consistency).
+
+===== Zasady
+. Agregat ma globalną tożsamość i jest odpowiedzialny za sprawdzanie niezmienników.
+. Encje wewnątrz agregatu mają lokalną tożsamość, unikalną tylko wewnątrz agregatu
+. Nic poza agregatem nie może trzymać referencji do czegoś wewnątrz, oprócz roota. Root może przekazać chwilowo referencję do czegoś wewnątrz i może dowolnie kopiować value objects.
+. Tylko agregaty mogą zostać otrzymane prosto z bazy danych, wszystko inne musi przejść przez agregat.
+. Operacja usunięcia musi usunąć wszystko wewnątrz agregatu jednocześnie.
+. Przy każdej zmianie w agregacie wszystkie niezmienniki muszą być spełnione.
