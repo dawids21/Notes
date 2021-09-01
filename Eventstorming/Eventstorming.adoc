@@ -74,3 +74,7 @@ W tym momencie cały model jest widoczny. Zostaje ostatnie 10-15 minut na dodani
 ==== Pick your problem
 image::00055.jpeg[Arrow Voting]
 Można zakończyć przez *Arrow Voting*. Każdy dostaje dwie strzałki i może je wskazać na dowolny problem lub możliwość. Czasami głosowanie nie jest dobrym pomysłem.
+
+== Playing with value
+image::00059.jpeg[Playing with value]
+Opcjonalny krok przy big picture. Zwykle po *People and systems* lub *Explicit walk-through*. Skupiamy się, gdzie dostarczana jest wartość. Możemy użyć zielonych kartek, by oznaczyć miejsca, w których tworzona jest wartość lub dzieje się coś pozytywnego i czerwone dla przeciwnego przypadku. Warto rozpocząć dyskusję nad czymś więcej niż pieniądze. Możemy odkryć nowe możliwości, poprzez sprawdzenie czego każdy potrzebuje (rekruter i pracownik korzystają z jednej platformy). Trudności ze znalezieniem wartości mogą prowadzić do opuszczenia projektu.
