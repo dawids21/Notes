@@ -450,6 +450,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#_playing_with_value">Playing with value</a></li>
+<li><a href="#_discovering_bounded_contexts">Discovering bounded contexts</a>
+<ul class="sectlevel2">
+<li><a href="#_finding_bounded_context">Finding bounded context</a></li>
+<li><a href="#_enter_eventstorming">Enter EventStorming</a></li>
+<li><a href="#_homework_time">Homework time</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -683,10 +690,102 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_discovering_bounded_contexts">Discovering bounded contexts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Odkrycie dobrych bounded contexts na początku projektu ma duże znaczenie.</p>
+</div>
+<div class="sect2">
+<h3 id="_finding_bounded_context">Finding bounded context</h3>
+<div class="imageblock">
+<div class="content">
+<img src="00060.gif" alt="Bounded contexts">
+</div>
+</div>
+<div class="paragraph">
+<p>Jeden bounded context powinien zawierać model dopasowany pod specyficzny cel. Musimy także znaleźć sposób na komunikację między kontekstami. Znalezienie BCs należy do zadania programisty.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_enter_eventstorming">Enter EventStorming</h3>
+<div class="paragraph">
+<p>Należy zatrzymać eventy podczas cichej eksploracji, które wydają się duplikatami, ale używają innych słów. Może się okazać, że są to nałożone BC.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="00062.jpeg" alt="Overlapping contexts">
+</div>
+</div>
+<div class="paragraph">
+<p>Podczas poszukiwania ludzi i systemów to właśnie systemy wskazują nam na różne bounded contexts.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_homework_time">Homework time</h3>
+<div class="paragraph">
+<p>Po wykonaniu eventstorming należy przeznaczyć trochę czasu na analizę. Wykrycie BCs można wyczytać z tablicy. Można zastosować heurystyki</p>
+</div>
+<div class="sect3">
+<h4 id="_heuristics">Heuristics</h4>
+<div class="sect4">
+<h5 id="_look_at_the_business_phases">look at the business phases</h5>
+<div class="imageblock">
+<div class="content">
+<img src="00067.jpeg" alt="Bounded contexts after Big Picture EventStorming">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="00065.jpeg" alt="Zoom-in into a pivotal event">
+</div>
+</div>
+<div class="paragraph">
+<p>To, co jest między pivotal events, należy często do innych BC. Są one często elementami wspólnego języka między BC.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_look_at_the_swimlanes">Look at the swimlanes</h5>
+<div class="imageblock">
+<div class="content">
+<img src="00068.jpeg" alt="Look at the swimlanes">
+</div>
+</div>
+<div class="paragraph">
+<p>Często osobne swimlanes są elementami osobnych BCs. Czasami są tylko if-statements w innym procesie.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_look_at_the_people_on_the_paper_roll">Look at the people on the paper roll</h5>
+<div class="imageblock">
+<div class="content">
+<img src="00069.jpeg" alt="Look at the people on the paper roll">
+</div>
+</div>
+<div class="paragraph">
+<p>Osobne role w systemie mogą należeć do osobnych BC (gwiazda jako speaker, zwykła osoba i call for papers).</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_look_at_the_humans_in_the_room">Look at the humans in the room</h5>
+<div class="paragraph">
+<p>Różni ludzie w pokoju są oznaką różnych potrzeb, a więc też różnych modeli.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_listen_to_the_actual_language">Listen to the actual language</h5>
+<div class="paragraph">
+<p>Zwracać uwagę głównie na czasowniki, gdyż wiele rzeczy może opisywać ten sam rzeczownik.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-09-01 14:05:08 +0200
+Last updated 2021-09-22 09:23:08 +0200
 </div>
 </div>
 </body>

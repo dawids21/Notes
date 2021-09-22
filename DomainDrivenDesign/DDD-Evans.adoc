@@ -10,9 +10,9 @@ Należy opanować *wiedzę* potrzebną w danej dziedzinie.
 Można to zrobić poprzez *model*.
 Trzy rzeczy wpływają na wybór modelu:
 
-* Model i design wpływają wzajemnie na siebie.
-* Model kreuje język, którym posługują się deweloperzy i eksperci domenowi.
-* Model obrazuje wiedzę zdobytą w zespole.
+- Model i design wpływają wzajemnie na siebie.
+- Model kreuje język, którym posługują się deweloperzy i eksperci domenowi.
+- Model obrazuje wiedzę zdobytą w zespole.
 
 === Crunching Knowledge
 

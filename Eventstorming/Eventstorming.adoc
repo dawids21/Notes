@@ -78,3 +78,39 @@ Można zakończyć przez *Arrow Voting*. Każdy dostaje dwie strzałki i może j
 == Playing with value
 image::00059.jpeg[Playing with value]
 Opcjonalny krok przy big picture. Zwykle po *People and systems* lub *Explicit walk-through*. Skupiamy się, gdzie dostarczana jest wartość. Możemy użyć zielonych kartek, by oznaczyć miejsca, w których tworzona jest wartość lub dzieje się coś pozytywnego i czerwone dla przeciwnego przypadku. Warto rozpocząć dyskusję nad czymś więcej niż pieniądze. Możemy odkryć nowe możliwości, poprzez sprawdzenie czego każdy potrzebuje (rekruter i pracownik korzystają z jednej platformy). Trudności ze znalezieniem wartości mogą prowadzić do opuszczenia projektu.
+
+== Discovering bounded contexts
+Odkrycie dobrych bounded contexts na początku projektu ma duże znaczenie.
+
+=== Finding bounded context
+image::00060.gif[Bounded contexts]
+Jeden bounded context powinien zawierać model dopasowany pod specyficzny cel. Musimy także znaleźć sposób na komunikację między kontekstami. Znalezienie BCs należy do zadania programisty.
+
+=== Enter EventStorming
+Należy zatrzymać eventy podczas cichej eksploracji, które wydają się duplikatami, ale używają innych słów. Może się okazać, że są to nałożone BC.
+
+image::00062.jpeg[Overlapping contexts]
+Podczas poszukiwania ludzi i systemów to właśnie systemy wskazują nam na różne bounded contexts.
+
+=== Homework time
+Po wykonaniu eventstorming należy przeznaczyć trochę czasu na analizę. Wykrycie BCs można wyczytać z tablicy. Można zastosować heurystyki
+
+==== Heuristics
+===== look at the business phases
+image::00067.jpeg[Bounded contexts after Big Picture EventStorming]
+image::00065.jpeg[Zoom-in into a pivotal event]
+To, co jest między pivotal events, należy często do innych BC. Są one często elementami wspólnego języka między BC.
+
+===== Look at the swimlanes
+image::00068.jpeg[Look at the swimlanes]
+Często osobne swimlanes są elementami osobnych BCs. Czasami są tylko if-statements w innym procesie.
+
+===== Look at the people on the paper roll
+image::00069.jpeg[Look at the people on the paper roll]
+Osobne role w systemie mogą należeć do osobnych BC (gwiazda jako speaker, zwykła osoba i call for papers).
+
+===== Look at the humans in the room
+Różni ludzie w pokoju są oznaką różnych potrzeb, a więc też różnych modeli.
+
+===== Listen to the actual language
+Zwracać uwagę głównie na czasowniki, gdyż wiele rzeczy może opisywać ten sam rzeczownik.
