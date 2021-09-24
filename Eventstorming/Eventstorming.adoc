@@ -114,3 +114,30 @@ Różni ludzie w pokoju są oznaką różnych potrzeb, a więc też różnych mo
 
 ===== Listen to the actual language
 Zwracać uwagę głównie na czasowniki, gdyż wiele rzeczy może opisywać ten sam rzeczownik.
+
+== Making it happen
+Powinniśmy zwracać uwagę na parę rzeczy podczas spotkania:
+
+- Starać się trzymać ten sam kolor karteczek (ważne) i mieć na nich zdania w odpowiednim czasie (mniej ważne, chyba że większość).
+- Zapewnić niezliczoną ilość karteczek i markerów
+- Utrzymać widoczną legendę z notacją
+- Dodawać definicje znane przez większość (u dołu, inna karteczka, żółta?)
+- Nie używać strzałek, jeżeli konsekwencja jest daleko to zduplikować.
+- Linia czasu nie musi być bardzo dokładna.
+
+== Workshop aftermath
+Workshop powinien być skończony, kiedy ludzie muszą iść na inne spotkanie. Bez jedzenia i posiłków będzie to około 2 godziny.
+
+=== How do we know we did a good job?
+Każdy workshop polega nie na zbudowaniu modelu, ale żeby wywołać konwersacje i polepszyć ich jakość.
+
+=== Visual check
+Parę rzeczy, które warto sprawdzić, żeby zobaczyć czy dobrze nam poszło.
+
+- Czy mamy hotspoty? Czy odbyła się konwersacja o najbardziej interesujących problemach?
+- Czy mamy około 100-200 eventów (dla 2-godzinnej sesji)?
+- Czy mamy wszystkie systemy zewnętrzne?
+- Zapytać, czy czegoś brakuje.
+
+=== Focusing on the hot spot
+Jeżeli jakiś problem pojawia się i wielu się zgadzać to powinniśmy wykorzystać ten moment na eksplorację tego problemu. Jeżeli jest ich wiele, to warto potrzymać wynik parę dni, aby zastąpić je przez nowe wersje flow.
