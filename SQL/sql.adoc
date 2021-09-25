@@ -1,0 +1,31 @@
+// suppress inspection "SqlDialectInspection" for whole file
+// suppress inspection "SqlNoDataSourceInspection" for whole file
+= SQL
+
+== Indexes
+Struktura używana przez bazę danych pomagająca przyspieszyć działanie wyszukiwania. Może być tworzona na dowolnej liczbie kolumn. Jeżeli indeks jest na mniejszej liczbie kolumn niż w query to i tak zostanie użyty. Jest on także używany przy join. Niektóre systemy posiadają "physical design advisor", który proponuje najlepsze indeksy.
+
+=== Drawbacks
+- Zajmują dodatkowe miejsce
+- Wymagają sporo czasu do stworzenia
+- Dodawanie nowych wierszy jest dłuższe z powodu aktualizacji indeksu.
+
+=== SQL syntax
+
+[source,sql]
+----
+create index IndexName on T(A);
+create index IndexName on T(A1, A2, An);
+create unique index IndexName on T(A); -- nie mogą istnieć zduplikowane wartości w kolumnie A
+drop index IndexName;
+----
+
+== Transactions
+Zbiór żądań SQL, które mają być traktowane jako jednostka. Oznacza to, że są one wywoływane w izolacji i, albo wszystkie przejdą, albo, w przypadku błędu, wszystkie zostaną wycofane. Zgodnie ze standardem jedną transakcją jest zbiór żądań między komendami `commit`. Użytkownik może sam wykonać `rollback`. Transakcje nie powinny czekać zbyt długo (np. na input).
+
+=== Properties
+- Atomicity — albo wszystkie zmiany, albo żadne.
+- Consistency — constraints w ramach danej bazy są zawsze poprawne.
+- Isolation — każdy klient wydaje się działać w izolacji. Równoległe wykonywanie instrukcji wewnątrz transakcji, ale transakcje kolejno (serializability), nie znamy tej kolejności.
+- Durability — jeżeli crash jest po `commit`, to wszytko przed zostaje w bazie.
+
