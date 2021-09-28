@@ -1,6 +1,7 @@
 // suppress inspection "SqlDialectInspection" for whole file
 // suppress inspection "SqlNoDataSourceInspection" for whole file
 = SQL
+:toc:
 
 == Indexes
 Struktura używana przez bazę danych pomagająca przyspieszyć działanie wyszukiwania. Może być tworzona na dowolnej liczbie kolumn. Jeżeli indeks jest na mniejszej liczbie kolumn niż w query to i tak zostanie użyty. Jest on także używany przy join. Niektóre systemy posiadają "physical design advisor", który proponuje najlepsze indeksy.

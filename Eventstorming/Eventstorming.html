@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.16">
-<title>A deep dive into problem space</title>
+<title>Event storming</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -439,30 +439,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article">
 <div id="header">
-<h1>A deep dive into problem space</h1>
+<h1>Event storming</h1>
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_running_a_big_picture_workshop">Running a big picture workshop</a>
+<li><a href="#_a_deep_dive_into_problem_space">A deep dive into problem space</a>
 <ul class="sectlevel2">
-<li><a href="#_najważniejsze_składniki">Najważniejsze składniki</a></li>
-<li><a href="#_struktura_sesji">Struktura sesji</a></li>
-</ul>
-</li>
+<li><a href="#_running_a_big_picture_workshop">Running a big picture workshop</a></li>
 <li><a href="#_playing_with_value">Playing with value</a></li>
-<li><a href="#_discovering_bounded_contexts">Discovering bounded contexts</a>
-<ul class="sectlevel2">
-<li><a href="#_finding_bounded_context">Finding bounded context</a></li>
-<li><a href="#_enter_eventstorming">Enter EventStorming</a></li>
-<li><a href="#_homework_time">Homework time</a></li>
-</ul>
-</li>
+<li><a href="#_discovering_bounded_contexts">Discovering bounded contexts</a></li>
 <li><a href="#_making_it_happen">Making it happen</a></li>
-<li><a href="#_workshop_aftermath">Workshop aftermath</a>
-<ul class="sectlevel2">
-<li><a href="#_how_do_we_know_we_did_a_good_job">How do we know we did a good job?</a></li>
-<li><a href="#_visual_check">Visual check</a></li>
-<li><a href="#_focusing_on_the_hot_spot">Focusing on the hot spot</a></li>
+<li><a href="#_workshop_aftermath">Workshop aftermath</a></li>
+<li><a href="#_big_picture_in_remote_mode">Big Picture in remote mode</a></li>
 </ul>
 </li>
 </ul>
@@ -470,8 +458,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_running_a_big_picture_workshop">Running a big picture workshop</h2>
+<h2 id="_a_deep_dive_into_problem_space">A deep dive into problem space</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_running_a_big_picture_workshop">Running a big picture workshop</h3>
 <div class="paragraph">
 <p>Służy do zbudowania modelu aktualnego zrozumienia systemu, znaleźć ryzyka i problemy. Biorą w nim udział wszystkie najważniejsze osoby zaangażowane w biznes. Podczas sesji:</p>
 </div>
@@ -488,8 +478,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="sect2">
-<h3 id="_najważniejsze_składniki">Najważniejsze składniki</h3>
+<div class="sect3">
+<h4 id="_najważniejsze_składniki">Najważniejsze składniki</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -509,8 +499,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_struktura_sesji">Struktura sesji</h3>
+<div class="sect3">
+<h4 id="_struktura_sesji">Struktura sesji</h4>
 <div class="paragraph">
 <p>Fazy o rosnącym stopniu skomplikowania:</p>
 </div>
@@ -535,6 +525,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>pick your problem</p>
 </li>
 </ul>
+</div>
 </div>
 <div class="sect3">
 <h4 id="_kick_off">Kick-off</h4>
@@ -683,11 +674,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_playing_with_value">Playing with value</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_playing_with_value">Playing with value</h3>
 <div class="imageblock">
 <div class="content">
 <img src="00059.jpeg" alt="Playing with value">
@@ -697,15 +685,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Opcjonalny krok przy big picture. Zwykle po <strong>People and systems</strong> lub <strong>Explicit walk-through</strong>. Skupiamy się, gdzie dostarczana jest wartość. Możemy użyć zielonych kartek, by oznaczyć miejsca, w których tworzona jest wartość lub dzieje się coś pozytywnego i czerwone dla przeciwnego przypadku. Warto rozpocząć dyskusję nad czymś więcej niż pieniądze. Możemy odkryć nowe możliwości, poprzez sprawdzenie czego każdy potrzebuje (rekruter i pracownik korzystają z jednej platformy). Trudności ze znalezieniem wartości mogą prowadzić do opuszczenia projektu.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_discovering_bounded_contexts">Discovering bounded contexts</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_discovering_bounded_contexts">Discovering bounded contexts</h3>
 <div class="paragraph">
 <p>Odkrycie dobrych bounded contexts na początku projektu ma duże znaczenie.</p>
 </div>
-<div class="sect2">
-<h3 id="_finding_bounded_context">Finding bounded context</h3>
+<div class="sect3">
+<h4 id="_finding_bounded_context">Finding bounded context</h4>
 <div class="imageblock">
 <div class="content">
 <img src="00060.gif" alt="Bounded contexts">
@@ -715,8 +701,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Jeden bounded context powinien zawierać model dopasowany pod specyficzny cel. Musimy także znaleźć sposób na komunikację między kontekstami. Znalezienie BCs należy do zadania programisty.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_enter_eventstorming">Enter EventStorming</h3>
+<div class="sect3">
+<h4 id="_enter_eventstorming">Enter EventStorming</h4>
 <div class="paragraph">
 <p>Należy zatrzymać eventy podczas cichej eksploracji, które wydają się duplikatami, ale używają innych słów. Może się okazać, że są to nałożone BC.</p>
 </div>
@@ -729,15 +715,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Podczas poszukiwania ludzi i systemów to właśnie systemy wskazują nam na różne bounded contexts.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_homework_time">Homework time</h3>
+<div class="sect3">
+<h4 id="_homework_time">Homework time</h4>
 <div class="paragraph">
 <p>Po wykonaniu eventstorming należy przeznaczyć trochę czasu na analizę. Wykrycie BCs można wyczytać z tablicy. Można zastosować heurystyki</p>
 </div>
-<div class="sect3">
-<h4 id="_heuristics">Heuristics</h4>
 <div class="sect4">
-<h5 id="_look_at_the_business_phases">look at the business phases</h5>
+<h5 id="_heuristics">Heuristics</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>look at the business phases</p>
+</li>
+</ul>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="00067.jpeg" alt="Bounded contexts after Big Picture EventStorming">
@@ -751,9 +742,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>To, co jest między pivotal events, należy często do innych BC. Są one często elementami wspólnego języka między BC.</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Look at the swimlanes</p>
+</li>
+</ul>
 </div>
-<div class="sect4">
-<h5 id="_look_at_the_swimlanes">Look at the swimlanes</h5>
 <div class="imageblock">
 <div class="content">
 <img src="00068.jpeg" alt="Look at the swimlanes">
@@ -762,9 +757,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Często osobne swimlanes są elementami osobnych BCs. Czasami są tylko if-statements w innym procesie.</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Look at the people on the paper roll</p>
+</li>
+</ul>
 </div>
-<div class="sect4">
-<h5 id="_look_at_the_people_on_the_paper_roll">Look at the people on the paper roll</h5>
 <div class="imageblock">
 <div class="content">
 <img src="00069.jpeg" alt="Look at the people on the paper roll">
@@ -773,26 +772,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Osobne role w systemie mogą należeć do osobnych BC (gwiazda jako speaker, zwykła osoba i call for papers).</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Look at the humans in the room</p>
+</li>
+</ul>
 </div>
-<div class="sect4">
-<h5 id="_look_at_the_humans_in_the_room">Look at the humans in the room</h5>
 <div class="paragraph">
 <p>Różni ludzie w pokoju są oznaką różnych potrzeb, a więc też różnych modeli.</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Listen to the actual language</p>
+</li>
+</ul>
 </div>
-<div class="sect4">
-<h5 id="_listen_to_the_actual_language">Listen to the actual language</h5>
 <div class="paragraph">
 <p>Zwracać uwagę głównie na czasowniki, gdyż wiele rzeczy może opisywać ten sam rzeczownik.</p>
 </div>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_making_it_happen">Making it happen</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_making_it_happen">Making it happen</h3>
 <div class="paragraph">
 <p>Powinniśmy zwracać uwagę na parę rzeczy podczas spotkania:</p>
 </div>
@@ -819,21 +823,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_workshop_aftermath">Workshop aftermath</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_workshop_aftermath">Workshop aftermath</h3>
 <div class="paragraph">
 <p>Workshop powinien być skończony, kiedy ludzie muszą iść na inne spotkanie. Bez jedzenia i posiłków będzie to około 2 godziny.</p>
 </div>
-<div class="sect2">
-<h3 id="_how_do_we_know_we_did_a_good_job">How do we know we did a good job?</h3>
+<div class="sect3">
+<h4 id="_how_do_we_know_we_did_a_good_job">How do we know we did a good job?</h4>
 <div class="paragraph">
 <p>Każdy workshop polega nie na zbudowaniu modelu, ale żeby wywołać konwersacje i polepszyć ich jakość.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_visual_check">Visual check</h3>
+<div class="sect3">
+<h4 id="_visual_check">Visual check</h4>
 <div class="paragraph">
 <p>Parę rzeczy, które warto sprawdzić, żeby zobaczyć czy dobrze nam poszło.</p>
 </div>
@@ -854,10 +856,109 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_focusing_on_the_hot_spot">Focusing on the hot spot</h3>
+<div class="sect3">
+<h4 id="_focusing_on_the_hot_spot">Focusing on the hot spot</h4>
 <div class="paragraph">
 <p>Jeżeli jakiś problem pojawia się i wielu się zgadzać to powinniśmy wykorzystać ten moment na eksplorację tego problemu. Jeżeli jest ich wiele, to warto potrzymać wynik parę dni, aby zastąpić je przez nowe wersje flow.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_big_picture_in_remote_mode">Big Picture in remote mode</h3>
+<div class="imageblock">
+<div class="content">
+<img src="00082.jpeg" alt="00082">
+</div>
+</div>
+<div class="paragraph">
+<p>Zrozumienie problemu pomaga w pracy zdalnej, ponieważ praca wymaga wtedy o wiele mniej niepotrzebnej komunikacji.</p>
+</div>
+<div class="sect3">
+<h4 id="_niespodziewane_konsekwencje">Niespodziewane konsekwencje</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Mniejsze zaangażowanie</p>
+</li>
+<li>
+<p>Łatwiejsza prokrastynacja</p>
+</li>
+<li>
+<p>Brak całodziennych sesji</p>
+</li>
+<li>
+<p>Brak nacisku ze strony innych</p>
+</li>
+<li>
+<p>Brak czasu na poznanie się</p>
+</li>
+<li>
+<p>Brak wpływu mowy ciała</p>
+</li>
+<li>
+<p>Trudności związane z posiadaną technologią</p>
+</li>
+<li>
+<p>Brak spontanicznych, równoległych konwersacji</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_looking_for_bounded_contexts">Looking for bounded contexts</h4>
+<div class="imageblock">
+<div class="content">
+<img src="00076.jpeg" alt="Looking for bounded contexts">
+</div>
+</div>
+<div class="paragraph">
+<p>Większość heurystyk dalej spełnia swoje zadanie, oprócz tych związanych z mową ciała. Możemy lekko zmienić notację. Użyć <strong>frames</strong>, aby wydzielić BC, użyć większych kartek dla Pivotal Events i użyć strzałek, aby połączyć event do nasłuchujących systemów. Jeżeli zależy nam tylko na wykryciu BC, to możemy spróbować podzielić sesję między ludzi.</p>
+</div>
+<div class="sect4">
+<h5 id="_validated_narrative">Validated narrative</h5>
+<div class="paragraph">
+<p>Dalej taka sama forma, ale możemy łatwo kopiować i tworzyć kolejne iteracje bazując na poprzedniej.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_patterns_for_remote_big_picture">Patterns for remote Big Picture</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Podzielić sesję, aby niektórzy pracowali równolegle. Musimy wprowadzić każdego i mieć kogoś, kto dobrze zna warsztat.</p>
+</li>
+<li>
+<p>Utworzyć podstawową strukturę, np. poprzez szybkie Pivotal Events, tak aby inni nie tworzyli zbyt lokalnie.</p>
+</li>
+<li>
+<p>Możemy użyć kolorów, jako czyjegoś podpisu. Później musimy je stopniowo wycofywać.</p>
+</li>
+<li>
+<p>Możemy użyć kolorów jako progresu, koniec jest wtedy, gdy wymienimy wszystkie kolorowe karteczki na pomarańczowe w explicit walkthrough.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="00079.jpeg" alt="00079">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Iterować tworząc model. Pozwala nam to patrzeć wstecz i eksperymentować. Każdy eksperyment powinien trwać około 5-10 minut, potem oceniamy i ewentualnie wracamy.</p>
+</li>
+<li>
+<p>Decyzję, mogą być zmieniane. Jeżeli opuszczamy jakiś kierunek, to powinniśmy pokazać dlaczego.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="00080.jpeg" alt="00080">
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -865,7 +966,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-09-24 08:01:18 +0200
+Last updated 2021-09-28 07:52:37 +0200
 </div>
 </div>
 </body>

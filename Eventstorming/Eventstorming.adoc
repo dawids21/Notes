@@ -1,21 +1,23 @@
-= A deep dive into problem space
+= Event storming
 :toc:
 
-== Running a big picture workshop
+== A deep dive into problem space
+
+=== Running a big picture workshop
 Służy do zbudowania modelu aktualnego zrozumienia systemu, znaleźć ryzyka i problemy. Biorą w nim udział wszystkie najważniejsze osoby zaangażowane w biznes. Podczas sesji:
 
 - Budujemy model zawierający wszystkie linie biznesu, pokazujemy komunikację między elementami, ich granice i różne perspektywy.
 - Odkrywamy i walidujemy najważniejszy problem do rozwiązania.
 - Odkrywamy ryzyka.
 
-=== Najważniejsze składniki
+==== Najważniejsze składniki
 - Dobrani ludzie, cechujący się ciekawością i ekspertyzą.
 - Duży pokój (długa ściana, miejsce do poruszania, brak miejsc siedzących, paper roll na ścianie, flip-chart z legendą, dużo karteczek i markerów, jedzenie i picie, timer).
 - Co najmniej jeden facilitator.
 
 image::./00015.jpeg[Pokój]
 
-=== Struktura sesji
+==== Struktura sesji
 Fazy o rosnącym stopniu skomplikowania:
 
 - kick-off
@@ -75,47 +77,52 @@ W tym momencie cały model jest widoczny. Zostaje ostatnie 10-15 minut na dodani
 image::00055.jpeg[Arrow Voting]
 Można zakończyć przez *Arrow Voting*. Każdy dostaje dwie strzałki i może je wskazać na dowolny problem lub możliwość. Czasami głosowanie nie jest dobrym pomysłem.
 
-== Playing with value
+=== Playing with value
 image::00059.jpeg[Playing with value]
 Opcjonalny krok przy big picture. Zwykle po *People and systems* lub *Explicit walk-through*. Skupiamy się, gdzie dostarczana jest wartość. Możemy użyć zielonych kartek, by oznaczyć miejsca, w których tworzona jest wartość lub dzieje się coś pozytywnego i czerwone dla przeciwnego przypadku. Warto rozpocząć dyskusję nad czymś więcej niż pieniądze. Możemy odkryć nowe możliwości, poprzez sprawdzenie czego każdy potrzebuje (rekruter i pracownik korzystają z jednej platformy). Trudności ze znalezieniem wartości mogą prowadzić do opuszczenia projektu.
 
-== Discovering bounded contexts
+=== Discovering bounded contexts
 Odkrycie dobrych bounded contexts na początku projektu ma duże znaczenie.
 
-=== Finding bounded context
+==== Finding bounded context
 image::00060.gif[Bounded contexts]
 Jeden bounded context powinien zawierać model dopasowany pod specyficzny cel. Musimy także znaleźć sposób na komunikację między kontekstami. Znalezienie BCs należy do zadania programisty.
 
-=== Enter EventStorming
+==== Enter EventStorming
 Należy zatrzymać eventy podczas cichej eksploracji, które wydają się duplikatami, ale używają innych słów. Może się okazać, że są to nałożone BC.
 
 image::00062.jpeg[Overlapping contexts]
 Podczas poszukiwania ludzi i systemów to właśnie systemy wskazują nam na różne bounded contexts.
 
-=== Homework time
+==== Homework time
 Po wykonaniu eventstorming należy przeznaczyć trochę czasu na analizę. Wykrycie BCs można wyczytać z tablicy. Można zastosować heurystyki
 
-==== Heuristics
-===== look at the business phases
+===== Heuristics
+- look at the business phases
+
 image::00067.jpeg[Bounded contexts after Big Picture EventStorming]
 image::00065.jpeg[Zoom-in into a pivotal event]
 To, co jest między pivotal events, należy często do innych BC. Są one często elementami wspólnego języka między BC.
 
-===== Look at the swimlanes
+- Look at the swimlanes
+
 image::00068.jpeg[Look at the swimlanes]
 Często osobne swimlanes są elementami osobnych BCs. Czasami są tylko if-statements w innym procesie.
 
-===== Look at the people on the paper roll
+- Look at the people on the paper roll
+
 image::00069.jpeg[Look at the people on the paper roll]
 Osobne role w systemie mogą należeć do osobnych BC (gwiazda jako speaker, zwykła osoba i call for papers).
 
-===== Look at the humans in the room
+- Look at the humans in the room
+
 Różni ludzie w pokoju są oznaką różnych potrzeb, a więc też różnych modeli.
 
-===== Listen to the actual language
+- Listen to the actual language
+
 Zwracać uwagę głównie na czasowniki, gdyż wiele rzeczy może opisywać ten sam rzeczownik.
 
-== Making it happen
+=== Making it happen
 Powinniśmy zwracać uwagę na parę rzeczy podczas spotkania:
 
 - Starać się trzymać ten sam kolor karteczek (ważne) i mieć na nich zdania w odpowiednim czasie (mniej ważne, chyba że większość).
@@ -125,13 +132,13 @@ Powinniśmy zwracać uwagę na parę rzeczy podczas spotkania:
 - Nie używać strzałek, jeżeli konsekwencja jest daleko to zduplikować.
 - Linia czasu nie musi być bardzo dokładna.
 
-== Workshop aftermath
+=== Workshop aftermath
 Workshop powinien być skończony, kiedy ludzie muszą iść na inne spotkanie. Bez jedzenia i posiłków będzie to około 2 godziny.
 
-=== How do we know we did a good job?
+==== How do we know we did a good job?
 Każdy workshop polega nie na zbudowaniu modelu, ale żeby wywołać konwersacje i polepszyć ich jakość.
 
-=== Visual check
+==== Visual check
 Parę rzeczy, które warto sprawdzić, żeby zobaczyć czy dobrze nam poszło.
 
 - Czy mamy hotspoty? Czy odbyła się konwersacja o najbardziej interesujących problemach?
@@ -139,5 +146,39 @@ Parę rzeczy, które warto sprawdzić, żeby zobaczyć czy dobrze nam poszło.
 - Czy mamy wszystkie systemy zewnętrzne?
 - Zapytać, czy czegoś brakuje.
 
-=== Focusing on the hot spot
+==== Focusing on the hot spot
 Jeżeli jakiś problem pojawia się i wielu się zgadzać to powinniśmy wykorzystać ten moment na eksplorację tego problemu. Jeżeli jest ich wiele, to warto potrzymać wynik parę dni, aby zastąpić je przez nowe wersje flow.
+
+=== Big Picture in remote mode
+image::00082.jpeg[]
+Zrozumienie problemu pomaga w pracy zdalnej, ponieważ praca wymaga wtedy o wiele mniej niepotrzebnej komunikacji.
+
+==== Niespodziewane konsekwencje
+- Mniejsze zaangażowanie
+- Łatwiejsza prokrastynacja
+- Brak całodziennych sesji
+- Brak nacisku ze strony innych
+- Brak czasu na poznanie się
+- Brak wpływu mowy ciała
+- Trudności związane z posiadaną technologią
+- Brak spontanicznych, równoległych konwersacji
+
+==== Looking for bounded contexts
+image::00076.jpeg[Looking for bounded contexts]
+Większość heurystyk dalej spełnia swoje zadanie, oprócz tych związanych z mową ciała. Możemy lekko zmienić notację. Użyć *frames*, aby wydzielić BC, użyć większych kartek dla Pivotal Events i użyć strzałek, aby połączyć event do nasłuchujących systemów. Jeżeli zależy nam tylko na wykryciu BC, to możemy spróbować podzielić sesję między ludzi.
+
+===== Validated narrative
+Dalej taka sama forma, ale możemy łatwo kopiować i tworzyć kolejne iteracje bazując na poprzedniej.
+
+==== Patterns for remote Big Picture
+- Podzielić sesję, aby niektórzy pracowali równolegle. Musimy wprowadzić każdego i mieć kogoś, kto dobrze zna warsztat.
+- Utworzyć podstawową strukturę, np. poprzez szybkie Pivotal Events, tak aby inni nie tworzyli zbyt lokalnie.
+- Możemy użyć kolorów, jako czyjegoś podpisu. Później musimy je stopniowo wycofywać.
+- Możemy użyć kolorów jako progresu, koniec jest wtedy, gdy wymienimy wszystkie kolorowe karteczki na pomarańczowe w explicit walkthrough.
+
+image::00079.jpeg[]
+
+- Iterować tworząc model. Pozwala nam to patrzeć wstecz i eksperymentować. Każdy eksperyment powinien trwać około 5-10 minut, potem oceniamy i ewentualnie wracamy.
+- Decyzję, mogą być zmieniane. Jeżeli opuszczamy jakiś kierunek, to powinniśmy pokazać dlaczego.
+
+image::00080.jpeg[]
