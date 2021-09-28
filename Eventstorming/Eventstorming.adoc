@@ -1,6 +1,8 @@
 = Event storming
 :toc:
 
+image::00025.jpeg[]
+
 == A deep dive into problem space
 
 === Running a big picture workshop
@@ -182,3 +184,27 @@ image::00079.jpeg[]
 - Decyzję, mogą być zmieniane. Jeżeli opuszczamy jakiś kierunek, to powinniśmy pokazać dlaczego.
 
 image::00080.jpeg[]
+
+== Modelling processes and services
+
+=== Process Modeling as a cooperative game
+
+==== Context
+- Próbujemy zbudować nowy proces lub wymienić stary
+- To, co modelujemy, jest ważne i wymaga uwagi
+- Patrzymy na mniejszy scope (end-to-end process)
+- Mamy mniejszą liczbę ludzi
+- Nie projektujemy jeszcze oprogramowania
+
+==== Goals
+- Każdy proces jest ukończony — każdy prowadzi do stanu, gdzie nie jest wymagana żadna natychmiastowa akcja. Flow może prowadzić do rozwidleń i ważne, abyśmy doszli do końca każdego z nich. Proces często zaczyna się komendą, a kończy eventem lub read modelem (żeby user wiedział, że koniec).
+
+image::00083.jpeg[]
+
+- Kolory są zachowane — korzystamy z dostępnych building bloków.
+
+image::00084.jpeg[]
+image::00085.jpeg[]
+
+- Każdy hotspot jest zaadresowany — hotspotami zaznaczmy miejsca, gdzie się nie zgadzamy, ale w tym momencie nie zajmujemy się tym. Ważne, aby na koniec modelowania nie mieć żadnych nierozwiązanych hotspotów.
+- Klienci są w miarę szczęśliwi — staramy się maksymalizować wartość, jaką wynoszą klienci. Koniec, gdy nie możemy znaleźć więcej wartości.
