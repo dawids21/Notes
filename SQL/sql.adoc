@@ -12,7 +12,6 @@ Struktura używana przez bazę danych pomagająca przyspieszyć działanie wyszu
 - Dodawanie nowych wierszy jest dłuższe z powodu aktualizacji indeksu.
 
 === SQL syntax
-
 [source,sql]
 ----
 create index IndexName on T(A);
@@ -30,3 +29,27 @@ Zbiór żądań SQL, które mają być traktowane jako jednostka. Oznacza to, ż
 - Isolation — każdy klient wydaje się działać w izolacji. Równoległe wykonywanie instrukcji wewnątrz transakcji, ale transakcje kolejno (serializability), nie znamy tej kolejności.
 - Durability — jeżeli crash jest po `commit`, to wszytko przed zostaje w bazie.
 
+=== Isolation level
+image::./image-2021-09-28-18-06-52-318.png[]
+Im niżej tym silniejsza izolacja (większy overhead, mniejsza concurrency i większa zapewnienie consistency). Ustawiamy per transakcja. Dirty read to taki, gdy dane są brane, zanim jeszcze zostały skomitowane.
+
+- Read uncommitted — transakcja może przeprowadzić dirty reads.
+- Read committed — transakcja nie może przeprowadzić dirty reads, ale jedna część może się wykonać przed całą, a druga po całej innej transakcji.
+- Repeatable read — nie może przeprowadzić dirty reads, a dodatkowo przy wielokrotnym odczycie jednej wartości, nie może się ona zmienić. Mogą być problemy z phantom tuples, czyli takimi, które są insert/delete w trakcie transakcji, ponieważ ten stopień nie zapewnia nam, że zostaną one uwzględnione.
+- serializable
+
+==== How to specify?
+[source, sql]
+----
+set transaction isolation level read uncommitted;
+set transaction isolation level read committed;
+set transaction isolation level repeatable read;
+set transaction isolation level serializable; -- default
+----
+
+==== Read only transactions
+Możemy tak określić transakcję. Jest wskazówką dla silnika.
+[source, sql]
+----
+set transaction read only;
+----

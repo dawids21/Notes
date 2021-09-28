@@ -452,6 +452,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_transactions">Transactions</a>
 <ul class="sectlevel2">
 <li><a href="#_properties">Properties</a></li>
+<li><a href="#_isolation_level">Isolation level</a></li>
 </ul>
 </li>
 </ul>
@@ -518,12 +519,61 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_isolation_level">Isolation level</h3>
+<div class="imageblock">
+<div class="content">
+<img src="./image-2021-09-28-18-06-52-318.png" alt="image 2021 09 28 18 06 52 318">
+</div>
+</div>
+<div class="paragraph">
+<p>Im niżej tym silniejsza izolacja (większy overhead, mniejsza concurrency i większa zapewnienie consistency). Ustawiamy per transakcja. Dirty read to taki, gdy dane są brane, zanim jeszcze zostały skomitowane.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Read uncommitted — transakcja może przeprowadzić dirty reads.</p>
+</li>
+<li>
+<p>Read committed — transakcja nie może przeprowadzić dirty reads, ale jedna część może się wykonać przed całą, a druga po całej innej transakcji.</p>
+</li>
+<li>
+<p>Repeatable read — nie może przeprowadzić dirty reads, a dodatkowo przy wielokrotnym odczycie jednej wartości, nie może się ona zmienić. Mogą być problemy z phantom tuples, czyli takimi, które są insert/delete w trakcie transakcji, ponieważ ten stopień nie zapewnia nam, że zostaną one uwzględnione.</p>
+</li>
+<li>
+<p>serializable</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="_how_to_specify">How to specify?</h4>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sql"><span style="color:#B06;font-weight:bold">set</span> <span style="color:#339;font-weight:bold">transaction</span> isolation level <span style="color:#088;font-weight:bold">read</span> uncommitted;
+<span style="color:#B06;font-weight:bold">set</span> <span style="color:#339;font-weight:bold">transaction</span> isolation level <span style="color:#088;font-weight:bold">read</span> committed;
+<span style="color:#B06;font-weight:bold">set</span> <span style="color:#339;font-weight:bold">transaction</span> isolation level repeatable <span style="color:#088;font-weight:bold">read</span>;
+<span style="color:#B06;font-weight:bold">set</span> <span style="color:#339;font-weight:bold">transaction</span> isolation level serializable; <span style="color:#777">-- default</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_read_only_transactions">Read only transactions</h4>
+<div class="paragraph">
+<p>Możemy tak określić transakcję. Jest wskazówką dla silnika.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sql"><span style="color:#B06;font-weight:bold">set</span> <span style="color:#339;font-weight:bold">transaction</span> <span style="color:#088;font-weight:bold">read</span> only;</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-09-26 13:09:15 +0200
+Last updated 2021-09-28 18:17:29 +0200
 </div>
 </div>
 </body>
