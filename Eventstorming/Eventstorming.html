@@ -456,6 +456,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_modelling_processes_and_services">Modelling processes and services</a>
 <ul class="sectlevel2">
 <li><a href="#_process_modeling_as_a_cooperative_game">Process Modeling as a cooperative game</a></li>
+<li><a href="#_process_modeling_building_blocks">Process modeling building blocks</a></li>
 </ul>
 </li>
 </ul>
@@ -1047,12 +1048,156 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_process_modeling_building_blocks">Process modeling building blocks</h3>
+<div class="paragraph">
+<p>Nie przedstawiamy dokładnie nazw i znaczeń poszczególnych building bloków, ponieważ chcemy, aby każdy mógł się włączyć w dyskusję.</p>
+</div>
+<div class="sect3">
+<h4 id="_events">Events</h4>
+<div class="imageblock">
+<div class="content">
+<img src="00086.jpeg" alt="00086">
+</div>
+</div>
+<div class="paragraph">
+<p>Małe sformalizowanie definicji. Event to każda ważna zmiana stanu systemu. Może być wymagane wielokrotne zmienianie nazwy eventu, aż się dopasujemy. Mogą być rezultatem:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Interakcji użytkownika — może wywołać wiele eventów. Warto zacząć od happy path, a potem eksplorować alternatywy i perspektywy. Nie powinniśmy od razu usuwać różnych nazw dla eventów, gdyż mogą być one znakiem nałożonych BCs.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="00088.jpeg" alt="00088">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Wywołane przez zewnętrzny system</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="00090.jpeg" alt="00090">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Wywołany przez czas — jest on jakby specjalnym zewnętrznym systemem. Możemy zaznaczyć, że dany event jest powiązany czasowo bądź jest powtarzany. Aby zamodelować event, który ma się nie wydarzyć, wystarczy, że określimy jakiś event czasowy, który oznacza, że jest za późno.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="00091.jpeg" alt="00091">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Rezultat kaskadowych reakcji — kiedy coś się stanie, to coś się stanie (możemy czasem połączyć polityką, bo ciężko rozróżnić)</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="00093.jpeg" alt="00093">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_commands_actions_intentions">Commands, actions intentions</h4>
+<div class="imageblock">
+<div class="content">
+<img src="00094.jpeg" alt="00094">
+</div>
+</div>
+<div class="paragraph">
+<p>Oznaczane przez niebieskie karteczki. Mają napisaną jakąś czynność. Nie mówią nam, że dana rzecz się zakończy (nadal może się nie powieść). Są wywoływane na jakimś systemie.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_people">People</h4>
+<div class="imageblock">
+<div class="content">
+<img src="00095.jpeg" alt="00095">
+</div>
+</div>
+<div class="paragraph">
+<p>Żółte karteczki reprezentujące osobę, która musi coś wykonać. Różne osoby mogą mieć różne motywacje, różne potrzebne informacje i jakieś dodatkowe kroki w trakcie procesu.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_systems">Systems</h4>
+<div class="imageblock">
+<div class="content">
+<img src="00096.jpeg" alt="00096">
+</div>
+</div>
+<div class="paragraph">
+<p>Modelowany, za pomocą różowej karteczki. Otrzymuje komendy i generuje eventy. Nie powinniśmy generalizować systemów (social media). Możemy wybrać jeden, a resztę typów oznaczyć hotspotem i zobaczyć je później.</p>
+</div>
+<div class="sect4">
+<h5 id="_conversational_systems">Conversational systems</h5>
+<div class="imageblock">
+<div class="content">
+<img src="00098.jpeg" alt="00098">
+</div>
+</div>
+<div class="paragraph">
+<p>Aby zamodelować taki rodzaj systemu wystarczy, że dodamy jakiś znak, że na tym kroku zatrzymujemy się dłużej i potem skupiamy się tylko na ostatecznych wynikach interakcji z takim systemem. Patrzymy na to, co zakończy konwersację.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_policy">Policy</h4>
+<div class="imageblock">
+<div class="content">
+<img src="00099.jpeg" alt="00099">
+</div>
+</div>
+<div class="paragraph">
+<p>Modelowane, za pomocą koloru liliowego. Jest w nich zamknięta reaktywna logika (event wywołuje komendę), zawiera wynik podjętej decyzji na podstawie zaistniałego stanu systemu. Modelujemy to jako kiedy coś się wydarzy, to coś robimy. Zmusza nas do odnalezienia decyzji biznesowej, na podstawie której dany event wywołał dane działanie. Możemy znaleźć nazwę danej polityki poprzez wyjście od "kiedy&#8230;&#8203; to", a wtedy zostanie wywołana dyskusja i nazwa powinna łatwo przyjść. Czasami trzeba dodać osobę do danej polityki, gdyż to ona podejmuje decyzję. Polityki ułatwiają nam zmianę podejmowanych decyzji.
+image::00105.jpeg[]</p>
+</div>
+<div class="sect4">
+<h5 id="_speaking_out_loud">Speaking out loud</h5>
+<div class="paragraph">
+<p>Mówienie na głos decyzji na podstawie polityki pozwala nam wychwycić, kiedy biznes jednak działa inaczej i kiedy potrzeba doprecyzowania. Warto po powiedzeniu na głos złapać wszystkie nieścisłości i hotspoty i przeanalizować je. Możemy dodać słowa takie jak zawsze i niezwłocznie, aby wyłapać kolejne nieścisłości.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_read_models">Read models</h4>
+<div class="imageblock">
+<div class="content">
+<img src="00106.jpeg" alt="00106">
+</div>
+</div>
+<div class="paragraph">
+<p>Reprezentuje informacje, które są potrzebne, aby użytkownik podjął jakąś decyzję. Wypisanie tych informacji może pokazać nam pewne założenia, które trzeba omówić. Aby wykryć wszystkie informacje, wychodzimy od decyzji i patrzymy, co jest potrzebne, przy czym nie modelujemy samego zdobywania informacji. Jeżeli to pomoże, to możemy dodać wireframes do read modelu.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_hotspots_2">Hotspots</h4>
+<div class="paragraph">
+<p>Dalej używamy ich tak samo. Mogą nam ułatwić znajdowanie różnych alternatywnych flow, kiedy nie możemy modelować ich wszystkich naraz.</p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-09-28 15:57:36 +0200
+Last updated 2021-10-04 21:33:47 +0200
 </div>
 </div>
 </body>

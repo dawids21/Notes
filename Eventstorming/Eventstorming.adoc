@@ -208,3 +208,57 @@ image::00085.jpeg[]
 
 - Każdy hotspot jest zaadresowany — hotspotami zaznaczmy miejsca, gdzie się nie zgadzamy, ale w tym momencie nie zajmujemy się tym. Ważne, aby na koniec modelowania nie mieć żadnych nierozwiązanych hotspotów.
 - Klienci są w miarę szczęśliwi — staramy się maksymalizować wartość, jaką wynoszą klienci. Koniec, gdy nie możemy znaleźć więcej wartości.
+
+=== Process modeling building blocks
+Nie przedstawiamy dokładnie nazw i znaczeń poszczególnych building bloków, ponieważ chcemy, aby każdy mógł się włączyć w dyskusję.
+
+==== Events
+image::00086.jpeg[]
+Małe sformalizowanie definicji. Event to każda ważna zmiana stanu systemu. Może być wymagane wielokrotne zmienianie nazwy eventu, aż się dopasujemy. Mogą być rezultatem:
+
+- Interakcji użytkownika — może wywołać wiele eventów. Warto zacząć od happy path, a potem eksplorować alternatywy i perspektywy. Nie powinniśmy od razu usuwać różnych nazw dla eventów, gdyż mogą być one znakiem nałożonych BCs.
+
+image::00088.jpeg[]
+
+- Wywołane przez zewnętrzny system
+
+image::00090.jpeg[]
+
+- Wywołany przez czas — jest on jakby specjalnym zewnętrznym systemem. Możemy zaznaczyć, że dany event jest powiązany czasowo bądź jest powtarzany. Aby zamodelować event, który ma się nie wydarzyć, wystarczy, że określimy jakiś event czasowy, który oznacza, że jest za późno.
+
+image::00091.jpeg[]
+
+- Rezultat kaskadowych reakcji — kiedy coś się stanie, to coś się stanie (możemy czasem połączyć polityką, bo ciężko rozróżnić)
+
+image::00093.jpeg[]
+
+==== Commands, actions intentions
+image::00094.jpeg[]
+Oznaczane przez niebieskie karteczki. Mają napisaną jakąś czynność. Nie mówią nam, że dana rzecz się zakończy (nadal może się nie powieść). Są wywoływane na jakimś systemie.
+
+==== People
+image::00095.jpeg[]
+Żółte karteczki reprezentujące osobę, która musi coś wykonać. Różne osoby mogą mieć różne motywacje, różne potrzebne informacje i jakieś dodatkowe kroki w trakcie procesu.
+
+==== Systems
+image::00096.jpeg[]
+Modelowany, za pomocą różowej karteczki. Otrzymuje komendy i generuje eventy. Nie powinniśmy generalizować systemów (social media). Możemy wybrać jeden, a resztę typów oznaczyć hotspotem i zobaczyć je później.
+
+===== Conversational systems
+image::00098.jpeg[]
+Aby zamodelować taki rodzaj systemu wystarczy, że dodamy jakiś znak, że na tym kroku zatrzymujemy się dłużej i potem skupiamy się tylko na ostatecznych wynikach interakcji z takim systemem. Patrzymy na to, co zakończy konwersację.
+
+==== Policy
+image::00099.jpeg[]
+Modelowane, za pomocą koloru liliowego. Jest w nich zamknięta reaktywna logika (event wywołuje komendę), zawiera wynik podjętej decyzji na podstawie zaistniałego stanu systemu. Modelujemy to jako kiedy coś się wydarzy, to coś robimy. Zmusza nas do odnalezienia decyzji biznesowej, na podstawie której dany event wywołał dane działanie. Możemy znaleźć nazwę danej polityki poprzez wyjście od "kiedy... to", a wtedy zostanie wywołana dyskusja i nazwa powinna łatwo przyjść. Czasami trzeba dodać osobę do danej polityki, gdyż to ona podejmuje decyzję. Polityki ułatwiają nam zmianę podejmowanych decyzji.
+image::00105.jpeg[]
+
+===== Speaking out loud
+Mówienie na głos decyzji na podstawie polityki pozwala nam wychwycić, kiedy biznes jednak działa inaczej i kiedy potrzeba doprecyzowania. Warto po powiedzeniu na głos złapać wszystkie nieścisłości i hotspoty i przeanalizować je. Możemy dodać słowa takie jak zawsze i niezwłocznie, aby wyłapać kolejne nieścisłości.
+
+==== Read models
+image::00106.jpeg[]
+Reprezentuje informacje, które są potrzebne, aby użytkownik podjął jakąś decyzję. Wypisanie tych informacji może pokazać nam pewne założenia, które trzeba omówić. Aby wykryć wszystkie informacje, wychodzimy od decyzji i patrzymy, co jest potrzebne, przy czym nie modelujemy samego zdobywania informacji. Jeżeli to pomoże, to możemy dodać wireframes do read modelu.
+
+==== Hotspots
+Dalej używamy ich tak samo. Mogą nam ułatwić znajdowanie różnych alternatywnych flow, kiedy nie możemy modelować ich wszystkich naraz.
