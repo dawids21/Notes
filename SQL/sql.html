@@ -455,6 +455,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_isolation_level">Isolation level</a></li>
 </ul>
 </li>
+<li><a href="#_constraints_and_triggers">Constraints and triggers</a>
+<ul class="sectlevel2">
+<li><a href="#_trigger">Trigger</a></li>
+<li><a href="#_constraints">Constraints</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -570,10 +576,51 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_constraints_and_triggers">Constraints and triggers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Constraints dbają, aby stan bazy był dopuszczalny, sprawdzane przy modyfikacjach tabeli (lub po transakcjach). Triggers monitorują zmiany, sprawdzają warunki i rozpoczynają akcje.</p>
+</div>
+<div class="sect2">
+<h3 id="_trigger">Trigger</h3>
+<div class="paragraph">
+<p>Kiedy coś się stanie, to sprawdza warunek, i kiedy ok to coś robi. Możemy przenieść logikę z aplikacji. Możemy też ich użyć, aby dać constraints, które nie są zaimplementowane.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="sql"><span style="color:#B06;font-weight:bold">create</span> <span style="color:#339;font-weight:bold">trigger</span> name [<span style="color:#080;font-weight:bold">before</span> | <span style="color:#088;font-weight:bold">after</span> | instead <span style="color:#080;font-weight:bold">of</span>] events [referencing-variables] [<span style="color:#080;font-weight:bold">for</span> <span style="color:#080;font-weight:bold">each</span> <span style="color:#339;font-weight:bold">row</span>] <span style="color:#080;font-weight:bold">when</span> [condition] action</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_constraints">Constraints</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>not null</p>
+</li>
+<li>
+<p>primary key — może być tylko jeden, w innych możemy wykorzystać <code>unique</code>, aby kombinacja była unikalna należy primary key (attr1, attr2, &#8230;&#8203;)</p>
+</li>
+<li>
+<p>attribute-based — sprawdza warunek dla danego atrybutu, po typie dajemy <code>check(condition)</code>, żaden dbms nie wspiera sub-query w nich</p>
+</li>
+<li>
+<p>tuple-based — jak w attribute, ale sprawdza kilka wartości i check dajemy po wszystkich kolumnach</p>
+</li>
+<li>
+<p>general assertions - aktualnie nie są zaimplementowane, jakiś condition, który zawsze musi być spełniony</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-09-28 18:17:29 +0200
+Last updated 2021-10-06 07:59:49 +0200
 </div>
 </div>
 </body>

@@ -53,3 +53,20 @@ Możemy tak określić transakcję. Jest wskazówką dla silnika.
 ----
 set transaction read only;
 ----
+
+== Constraints and triggers
+Constraints dbają, aby stan bazy był dopuszczalny, sprawdzane przy modyfikacjach tabeli (lub po transakcjach). Triggers monitorują zmiany, sprawdzają warunki i rozpoczynają akcje.
+
+=== Trigger
+Kiedy coś się stanie, to sprawdza warunek, i kiedy ok to coś robi. Możemy przenieść logikę z aplikacji. Możemy też ich użyć, aby dać constraints, które nie są zaimplementowane.
+[source, sql]
+----
+create trigger name [before | after | instead of] events [referencing-variables] [for each row] when [condition] action
+----
+
+=== Constraints
+- not null
+- primary key — może być tylko jeden, w innych możemy wykorzystać `unique`, aby kombinacja była unikalna należy primary key (attr1, attr2, ...)
+- attribute-based — sprawdza warunek dla danego atrybutu, po typie dajemy `check(condition)`, żaden dbms nie wspiera sub-query w nich
+- tuple-based — jak w attribute, ale sprawdza kilka wartości i check dajemy po wszystkich kolumnach
+- general assertions - aktualnie nie są zaimplementowane, jakiś condition, który zawsze musi być spełniony
